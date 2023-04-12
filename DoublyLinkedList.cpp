@@ -68,11 +68,11 @@ public:
 		}
 		else if (index > doubleLinkedListSize())
 		{
-			cout << "Index out of range" << endl;
+			throw std::out_of_range("Index is out of range!");
 		}
 		else if (index < 0)
 		{
-			cout << "Invalid, index should be positive" << endl;
+			throw std::out_of_range("Index is out of range!");
 		}
 		else
 		{
@@ -174,11 +174,11 @@ public:
 		}
 		else if (index > doubleLinkedListSize() - 1)
 		{
-			cout << "Index out of range" << endl;
+			throw std::out_of_range("Index is out of range!");
 		}
 		else if (index < 0)
 		{
-			cout << "Invalid, index should be positive" << endl;
+			throw std::out_of_range("Index is out of range!");
 		}
 		else
 		{
@@ -213,8 +213,7 @@ public:
 		}
 		else
 		{
-			cout << "Index out of range" << endl;
-			return NULL;
+			throw std::out_of_range("Index is out of range!");
 		}
 	}
 
@@ -231,7 +230,7 @@ public:
 		}
 		else
 		{
-			cout << "Index out of range" << endl;
+			throw std::out_of_range("Index is out of range!");
 		}
 	}
 
@@ -269,8 +268,7 @@ public:
 		}
 		else
 		{
-			cout << "Index out of range" << endl;
-			return false;
+			throw std::out_of_range("Index is out of range!");
 		}
 	}
 
@@ -315,7 +313,7 @@ public:
 		}
 		else
 		{
-			cout << "Index out of range" << endl;
+			throw std::out_of_range("Index is out of range!");
 		}
 	}
 	// this will be changed
@@ -388,173 +386,3 @@ public:
 };
 
 
-int main()
-{
-	DoublyLinkedList<int> list;
-	cout << "Insert at head" << endl;
-	list.insertAtHead(1);
-	list.insertAtHead(2);
-	list.insertAtHead(3);
-	list.insertAtHead(4);
-	list.insertAtHead(5);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "Insert at tail" << endl;
-	list.insertAtTail(1);
-	list.insertAtTail(2);
-	list.insertAtTail(3);
-	list.insertAtTail(4);
-	list.insertAtTail(5);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "Insert at index" << endl;
-	list.insertAt(1, 0);
-	list.insertAt(2, 1);
-	list.insertAt(3, 2);
-	list.insertAt(4, 3);
-	list.insertAt(5, 4);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "Insert After" << endl;
-	list.insertAt(1, 0);
-	list.insertAt(2, 1);
-	list.insertAt(3, 2);
-	list.insertAt(4, 3);
-	list.insertAt(5, 4);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.insertAfter(list.head, 0);
-	list.insertAfter(list.head->next, 1);
-	list.insertAfter(list.head->next->next, 2);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "Remove at head" << endl;
-	list.insertAtTail(1);
-	list.insertAtTail(2);
-	list.insertAtTail(3);
-	list.insertAtTail(4);
-	list.insertAtTail(5);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.removeAtHead();
-	list.removeAtHead();
-	list.removeAtHead();
-	list.removeAtHead();
-	list.removeAtHead();
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "Remove at tail" << endl;
-	list.insertAtTail(1);
-	list.insertAtTail(2);
-	list.insertAtTail(3);
-	list.insertAtTail(4);
-	list.insertAtTail(5);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.removeAtTail();
-	list.removeAtTail();
-	list.removeAtTail();
-	list.removeAtTail();
-	list.removeAtTail();
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "Remove at index" << endl;
-	list.insertAtTail(1);
-	list.insertAtTail(2);
-	list.insertAtTail(3);
-	list.insertAtTail(4);
-	list.insertAtTail(5);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.removeAt(0);
-	list.removeAt(1);
-	list.removeAt(2);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "Retrieve at" << endl;
-	list.insertAtTail(1);
-	list.insertAtTail(2);
-	list.insertAtTail(3);
-	list.insertAtTail(4);
-	list.insertAtTail(5);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	cout << list.retrieveAt(2) << endl;
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "Replace at" << endl;
-	list.insertAtTail(1);
-	list.insertAtTail(2);
-	list.insertAtTail(3);
-	list.insertAtTail(4);
-	list.insertAtTail(5);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.replaceAt(0, 0);
-	list.replaceAt(1, 1);
-	list.replaceAt(2, 2);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "is Exist" << endl;
-	list.insertAtTail(1);
-	list.insertAtTail(2);
-	list.insertAtTail(3);
-	list.insertAtTail(4);
-	list.insertAtTail(5);
-	cout << list.isExist(1) << endl;
-	cout << list.isExist(8) << endl;
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "is item at equal" << endl;
-	list.insertAtTail(1);
-	list.insertAtTail(2);
-	list.insertAtTail(3);
-	list.insertAtTail(4);
-	list.insertAtTail(5);
-	cout << list.isItemAtEqual(1, 0) << endl;
-	cout << list.isItemAtEqual(2, 4) << endl;
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "Swap" << endl;
-	list.insertAtTail(1);
-	list.insertAtTail(2);
-	list.insertAtTail(3);
-	list.insertAtTail(4);
-	list.insertAtTail(5);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.swap(0, 4);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.clear();
-	cout << "----------------------------------------" << endl;
-	cout << "Reverse" << endl;
-	list.insertAtTail(1);
-	list.insertAtTail(2);
-	list.insertAtTail(3);
-	list.insertAtTail(4);
-	list.insertAtTail(5);
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.reverse();
-	list.forwardTraversal();
-	list.backwardTraversal();
-	list.clear();
-	cout << "----------------------------------------" << endl;
-}
