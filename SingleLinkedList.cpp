@@ -337,7 +337,7 @@ public:
 	}
 };
 
-int main()
+/*int main()
 {
 	// give me test cases for all the methods with different data types and different scenarios
 	// for example, if the list is empty, if the list has one element, if the list has more than one element
@@ -470,5 +470,5 @@ int main()
 	list.print();
 	list.clear();
 	cout << "----------------------------------------" << endl;	
-}
+}*/
 
