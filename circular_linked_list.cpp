@@ -333,7 +333,7 @@ class circular_linked_list
         }
 };
 
-int main()
+/*int main()
 {
     for (int i = 0; i < 5; i++)
     {
@@ -350,7 +350,7 @@ int main()
             c.print();
         }   
     }
-    /*while(c.circularLinkedListSize())
+    while(c.circularLinkedListSize())
     {
         c.removeAtHead();
         cout << "after head\n";
@@ -358,5 +358,5 @@ int main()
         c.removeAtEnd();
         cout << "after end\n";
         c.print();
-    }*/
-}
+    }
+}*/
