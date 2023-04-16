@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
-template <class elementTypnode>
-class node{
+template <class elementTypqeueuNode>
+class qeueuNode{
     public:
-    elementTypnode data;
-    node*next;
-    node(){
+    elementTypqeueuNode data;
+    qeueuNode*next;
+    qeueuNode(){
         next= nullptr;
     }
 };
@@ -13,8 +13,8 @@ template <class elementType>
 class Queue{
 public:
     int length;
-node<elementType>*front;
-    node<elementType>*rear;
+    qeueuNode<elementType>*front;
+    qeueuNode<elementType>*rear;
     Queue()
     {   length=0;
         front=rear=nullptr;
@@ -28,25 +28,26 @@ node<elementType>*front;
         }
     }
     void enqueue (elementType element){
-        node<elementType>*newnode=new node<elementType>();
-        newnode->data=element;
+        qeueuNode<elementType>*newqeueuNode=new qeueuNode<elementType>();
+        newqeueuNode->data=element;
 
         if(isEmpty()){
-            front=rear=newnode;
+            front=rear=newqeueuNode;
         }
         else{
-            rear->next=newnode;
-            rear=newnode;
+            rear->next=newqeueuNode;
+            rear=newqeueuNode;
         }
         length++;
 
     }
     void print(){
-        node<elementType>*temp=front;
+        qeueuNode<elementType>*temp=front;
         while(temp!= nullptr){
             cout<<temp->data<<" ";
             temp=temp->next;
         }
+        cout << endl;
     }
 
     elementType dequeue (){
@@ -61,7 +62,7 @@ node<elementType>*front;
         length--;
         }
         else{
-            node<elementType>*delpr=front;
+            qeueuNode<elementType>*delpr=front;
             value=delpr->data;
             front=front->next;
             delete delpr;
@@ -78,7 +79,8 @@ node<elementType>*front;
 
     }
     void clear(){
-        while(!isEmpty()){
+        while(!isEmpty())
+        {
             dequeue();
         }
     }

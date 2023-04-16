@@ -2,37 +2,37 @@
 using namespace std;
 
 template<class elementType>
-struct node
+struct stackNode
 {
     elementType value;
-    node* next;
+    stackNode* next;
 };
 
 template<class elementType>
-class stack
+class Stack
 {
     private:
-        node<elementType>* head, *tail;
+        stackNode<elementType>* head, *tail;
         int size;
     public:
-        stack()
+        Stack()
         {
             head = tail = NULL;
             size = 0;
         }
         void push(elementType v)
         {
-            node<elementType>* new_node = new node<elementType>();
-            new_node->value = v;
-            new_node->next = NULL;
+            stackNode<elementType>* new_stackNode = new stackNode<elementType>();
+            new_stackNode->value = v;
+            new_stackNode->next = NULL;
             if(size == 0)
             {
-                head = tail = new_node;
+                head = tail = new_stackNode;
             }
             else
             {
-                new_node->next = head;
-                head = new_node;
+                new_stackNode->next = head;
+                head = new_stackNode;
             }
             size++;
         }
@@ -40,7 +40,7 @@ class stack
         {
             if(!isEmpty())
             {
-                node<elementType>* temp = head;
+                stackNode<elementType>* temp = head;
                 head = head->next;
                 temp->next = NULL;
                 elementType x = temp->value;
@@ -80,14 +80,13 @@ class stack
         {
             if(!isEmpty())
             {
-                node<elementType>* current = head;
-                cout << '[';
+                stackNode<elementType>* current = head;
                 for (int i = 0; i < size-1; i++)
                 {
-                    cout << current->value << ", ";
+                    cout << current->value << " ";
                     current = current->next;
                 }
-                cout << current->value << ']';
+                cout << current->value;
                 cout << '\n';
             }
             else
