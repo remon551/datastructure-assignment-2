@@ -9,13 +9,13 @@ struct node
 };
 
 template<class elementType>
-class stack
+class Stack
 {
     private:
         node<elementType>* head, *tail;
         int size;
     public:
-        stack()
+        Stack()
         {
             head = tail = NULL;
             size = 0;
